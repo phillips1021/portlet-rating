@@ -1,0 +1,23 @@
+[
+    {
+        "user_name":"brucephillips",
+		"portlet_id":44,
+		"rating":2,
+		"review":"comment on 44",
+		"ratingDate":"2016-01-15"
+    },
+	{
+        "user_name":"ghosler",
+		"portlet_id":54,
+		"rating":3,
+		"review":"comment on 54",
+		"ratingDate":"2016-01-16"
+    },
+	{
+        "user_name":"amarker",
+		"portlet_id":64,
+		"rating":4,
+		"review":"comment on 64",
+		"ratingDate":"2016-01-14"
+    }
+]
