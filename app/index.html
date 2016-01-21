@@ -13,20 +13,17 @@
 </head>
 <body>
 <h3>Portlet Ratings and Comments</h3>
-  <ul>
-    <li ng-repeat="rating in ratings">
-      {{rating.portlet_id}} - {{rating.ratingDate}} - {{rating.user_name}} - {{rating.rating}} <br />
-      {{rating.review}}
-    </li>
-  </ul>
-  
-<uib-accordion close-others="oneAtATime" >
 
-    <uib-accordion-group heading="{{rating.portlet_id}}" ng-repeat="rating in ratings">
-      {{rating.ratingDate}} - {{rating.rating}} - {{rating.review}} - {{rating.user_name}}
+  
+  <uib-accordion close-others="oneAtATime" >
+
+    <uib-accordion-group heading="{{portlet.portletName}}" ng-repeat="portlet in ratings">
+      <p ng-repeat="rating in portlet.ratings">Date: {{rating.ratingDate}} - User: {{rating.user_name}} - Rating: {{rating.rating}} <br />
+      &nbsp;&nbsp;&nbsp; Comment: {{rating.review}} </p>
     </uib-accordion-group>
     
   </uib-accordion>
+  
 
 </body>
 </html>
