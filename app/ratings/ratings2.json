@@ -1,0 +1,15 @@
+[{
+        "portletName": "portlet1",
+        "ratings": [
+		  {"rating": 4,"review":"review 1 for portlet1","user_name":"brucephillips","ratingDate":"2015-01-10"},
+		  {"rating":2,"review":"review 2 for portlet1","user_name":"amarker","ratingDate":"2015-01-11"}
+		] 
+ },
+ {
+        "portletName":"portlet2",
+        "ratings":[
+		  {"rating":1,"review":"review 1 for portlet2","user_name":"brucephillips","ratingDate":"2015-01-12"},
+		  {"rating":5,"review":"review 2 for portlet2","user_name":"amarker","ratingDate":"2015-01-13"}
+		 ]
+ }
+]
