@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" >
+<head>
+  <meta charset="utf-8">
+  <title>Portlet Ratings and Comments</title>
+  <link rel="stylesheet" href="css/app.css">
+   <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.0.js"></script>
+    
+    <script type="application/javascript">
+	
+	function dateCtrl($scope) {
+    var d = new Date();
+    var curr_date = d.getDate();
+    var curr_month = d.getMonth()+1;
+    var curr_year = d.getFullYear();
+    
+    $scope.dateToday = Date.parse(curr_month + "/" + curr_date + "/" + curr_year);
+    $scope.dateRange = ""; 
+        
+    $scope.dataModels = [{age:5,name:'John Lennon',eventDate:"1380524400000"},
+    {age:12,name:'Nick Young',eventDate:"1377500400000"},				
+    {age:10,name:'Mike Johnson',eventDate:"1374044400000"},
+    {age:15,name:'Lisa Leslie',eventDate:"1335942000000"}
+    ];
+    
+    $scope.eventDateFilter = function(column) {
+        if(column === 'today') {
+            $scope.dateRange = $scope.dateToday;
+        } else if (column === 'pastWeek') {
+            //need logic
+        } else if (column === 'pastMonth') {
+            //need logic            
+        } else if (column === 'future') {
+            //need logic
+        } else {
+            $scope.dateRange = "";
+        }
+    }
+}
+	
+	</script>
+</head>
+<body ng:app>
+<h3>Date Filter Example</h3>
+
+  <div ng:controller="dateCtrl">
+Date Filter
+	<ul class="inline">
+		<li><a href ng-click="eventDateFilter('all')">All</a></li>
+		<li><a href ng-click="eventDateFilter('today')">Today</a></li>
+		<li><a href ng-click="eventDateFilter('pastWeek')">Past Week</a></li>
+        <li><a href ng-click="eventDateFilter('pastMonth')">Past Month</a></li>
+		<li><a href ng-click="eventDateFilter('future')">Upcoming Events</a></li>
+	</ul>
+    
+    <p>Date Range: {{scope.dateRange}} </p>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Event Date</th>
+        </tr>
+        <tr ng:repeat="data in dataModels | filter:dateRange">
+            <td>{{data.name}}</td>
+            <td>{{data.age}}</td>
+            <td>{{data.eventDate | date:medium}}</td>
+        </tr>
+    </table>    
+</div>
+
+  
+
+</body>
+</html>
+

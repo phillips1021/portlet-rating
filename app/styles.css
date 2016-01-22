@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/* CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Permanent+Marker);
+
+body {
+  padding: 10px;
+}
+
+.thumb-wrapper {
+  postion: relative;
+}
+
+.thumb {
+  background: white;
+	display: inline;
+	float: left;
+	margin: 0 15px 30px;
+	padding: 10px 10px 15px;
+	text-align: left;
+	text-decoration: none;
+	-webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+	-moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
+	box-shadow: 0 4px 6px rgba(0,0,0,.3);
+	transition: all .15s linear;
+	z-index:0;
+}
+
+.thumb img {
+  width: 100px;
+  height: 100px;
+}
+
+.thumb p {
+  font-family: arial;
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
