@@ -21,7 +21,10 @@
   </head>
 
   <body ng-controller="MainCtrl as main">
-    <select class="form-control" ng-model="main.dateAfter" ng-options="range.name for range in main.dateRanges"></select>
+  
+  <h3>Portlet Ratings and Comments</h3>
+  
+    <select class="form-control" ng-model="main.dateAfter" ng-options="range.name for range in main.dateRanges" style="width:150px"></select>
     <hr />
     <div class="thumb-wrapper">
       <div class="thumb my-repeat-animation" ng-repeat="item in main.items | isAfter:main.dateAfter.date track by item.id">
