@@ -2,6 +2,9 @@
 <html ng-app="myApp">
 
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script data-require="moment.js@2.8.3" data-semver="2.8.3" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.8.3/moment.min.js"></script>
 
    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
@@ -21,11 +24,14 @@
   </head>
 
   <body ng-controller="MainCtrl as main">
-  
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
   <h3>Portlet Ratings and Comments</h3>
   
     <select class="form-control" ng-model="main.dateAfter" ng-options="range.name for range in main.dateRanges" style="width:150px"></select>
     <hr />
+    </div>
     <div class="thumb-wrapper">
       <div class="thumb my-repeat-animation" ng-repeat="item in main.items | isAfter:main.dateAfter.date track by item.id">
         
@@ -37,7 +43,9 @@
     
     </div>
     
-
+</div>
+</div>
+</nav>
   
     
   </body>
